@@ -13,11 +13,13 @@ public class MissionDemolition : MonoBehaviour {
 	static private MissionDemolition S; // a private singleton
 
 	[Header("Set in Inspector")]
-	public Text uitLevel; //The UIText_Level text
+	//public Text uitLevel; //The UIText_Level text
+	public Button uiRestartButton; //The UIButton_Restart
 	public Text uitShots; //The UIText_Shots text
 	public Text uitButton; //The Text on UIButton_View
 	public Vector3 castlePos; //The place to put castles
 	public GameObject[] castles; //An array of the castles
+	public CastleGeneration castleGeneration; //A reference to the background castle generator
 
 	[Header("Set Dynamically")]
 	public int level; //The current level
@@ -27,19 +29,21 @@ public class MissionDemolition : MonoBehaviour {
 	public GameMode mode = GameMode.idle;
 	public string showing = "Show Slingshot"; //FollowCam mode
 
-
+	
 	// Use this for initialization
 	void Start () 
 	{
 		S = this; //Define the singleton
-
+		uiRestartButton.onClick.AddListener(StartLevel);
+		
 		level = 0;
 		levelMax = castles.Length;
 		StartLevel();
 	}
-
+	
 	void StartLevel ()
 	{
+		castleGeneration.PlaceCastle();
 		//Get rid of the old castle if one exists
 		if (castle != null)
 		{
@@ -73,7 +77,7 @@ public class MissionDemolition : MonoBehaviour {
 	void UpdateGUI () 
 	{
 		//Show the data in the GUITexts
-		uitLevel.text = "Level: "+(level+1)+" of "+levelMax;
+		//uitLevel.text = "Level: "+(level+1)+" of "+levelMax;
 		uitShots.text = "Shots Taken: "+shotsTaken;
 	}
 

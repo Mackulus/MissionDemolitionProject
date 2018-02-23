@@ -14,9 +14,14 @@ public class CastleGeneration : MonoBehaviour {
 		PlaceCastle();
 	}
 
-	private void PlaceCastle()
+	public void PlaceCastle()
 	{
-		int random = Random.Range(1, 3);
+		if (castle != null)
+		{
+			Destroy(castle);
+		}
+
+		int random = Random.Range(1,4);
 		if (random == 1)
 			castle = Instantiate(prefabCastle1);
 		else if (random == 2)
