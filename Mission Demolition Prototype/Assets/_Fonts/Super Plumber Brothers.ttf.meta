@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3294d5d70a6b344379b398bcd9ac542b
+timeCreated: 1519348736
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Super Plumber Brothers
+  fontNames:
+  - Super Plumber Brothers
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
