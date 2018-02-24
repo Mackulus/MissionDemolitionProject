@@ -10,16 +10,15 @@ public class Slingshot : MonoBehaviour {
 
 	//fields set dynamically
 	[Header("Set Dynamically")]
-	public GameObject launchPoint;
-	public Vector3 launchPos;
-	public GameObject projectile;
-	public bool aimingMode;
-	public bool shotFiredRecently = false;
-
-	private Rigidbody projectileRigidbody;
+	private bool aimingMode;
+	private bool shotFiredRecently = false;
+	private GameObject jumping;
+	private GameObject launchPoint;
+	private GameObject projectile;
 	private GameObject standing;
 	private GameObject throwing;
-	private GameObject jumping;
+	private Rigidbody projectileRigidbody;
+	private Vector3 launchPos;
 
 	static public Vector3 LAUNCH_POS
 	{

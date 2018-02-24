@@ -958,11 +958,6 @@ MonoBehaviour:
   prefabProjectile: {fileID: 1788262601430748, guid: 0f3b8b86916770b4ab6d55ce0c6569ef,
     type: 2}
   velocityMult: 10
-  launchPoint: {fileID: 0}
-  launchPos: {x: 0, y: 0, z: 0}
-  projectile: {fileID: 0}
-  aimingMode: 0
-  shotFiredRecently: 0
 --- !u!1 &1085114820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,18 +1331,9 @@ MonoBehaviour:
   uitShots: {fileID: 769089701}
   uitButton: {fileID: 951325061}
   castlePos: {x: 50, y: -9.5, z: 0}
-  castles:
-  - {fileID: 1645204975363150, guid: 646261718f2fe4700abadbab309b104e, type: 2}
-  - {fileID: 1645204975363150, guid: a64343ba71c464db5851f69261d5f413, type: 2}
-  - {fileID: 1645204975363150, guid: 0fef2d85f83ce4d50abeaa42f20c2956, type: 2}
-  - {fileID: 1645204975363150, guid: c76c06d2a9643435fb26730456f39cfe, type: 2}
+  castlePrefab: {fileID: 1645204975363150, guid: c76c06d2a9643435fb26730456f39cfe,
+    type: 2}
   castleGeneration: {fileID: 511211503}
-  level: 0
-  levelMax: 0
-  shotsTaken: 0
-  castle: {fileID: 0}
-  mode: 0
-  showing: Show Slingshot
 --- !u!1 &1451695614
 GameObject:
   m_ObjectHideFlags: 0

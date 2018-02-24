@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public enum GameMode
 {
@@ -18,30 +20,31 @@ public class MissionDemolition : MonoBehaviour {
 	public Text uitShots; //The UIText_Shots text
 	public Text uitButton; //The Text on UIButton_View
 	public Vector3 castlePos; //The place to put castles
-	public GameObject[] castles; //An array of the castles
+	public GameObject castlePrefab; //A reference to the castle prefab
 	public CastleGeneration castleGeneration; //A reference to the background castle generator
 
 	[Header("Set Dynamically")]
-	public int level; //The current level
-	public int levelMax; //The number of levels
-	public int shotsTaken;
-	public GameObject castle; //The current castle
-	public GameMode mode = GameMode.idle;
-	public string showing = "Show Slingshot"; //FollowCam mode
+	private GameObject castle; //The current castle
+	private GameMode mode = GameMode.idle;
+	private int level; //The current level
+	private int shotsTaken; //shots taken
+	private string showing = "Show Slingshot"; //FollowCam mode
 
-	private MeshRenderer[] Mario;
 	// Use this for initialization
 	void Start () 
 	{
 		S = this; //Define the singleton
-		uiRestartButton.onClick.AddListener(StartLevel);
-		Mario = GameObject.Find("Mario").GetComponentsInChildren<MeshRenderer>();
-		
-		level = 0;
-		levelMax = castles.Length;
+		uiRestartButton.onClick.AddListener(RestartGame);
+
+		level = Convert.ToInt16(SceneManager.GetActiveScene().name.Substring(7));
 		StartLevel();
 	}
 	
+	void RestartGame()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
 	void StartLevel ()
 	{
 		castleGeneration.PlaceCastle();
@@ -59,7 +62,7 @@ public class MissionDemolition : MonoBehaviour {
 		}
 
 		//Instantiate the new castle
-		castle = Instantiate<GameObject>(castles[level]);
+		castle = Instantiate<GameObject>(castlePrefab);
 		castle.transform.position = castlePos;
 		shotsTaken = 0;
 
@@ -79,7 +82,7 @@ public class MissionDemolition : MonoBehaviour {
 	{
 		//Show the data in the GUITexts
 		//uitLevel.text = "Level: "+(level+1)+" of "+levelMax;
-		uitShots.text = "Shots Taken: "+shotsTaken;
+		uitShots.text = "Shots Taken: " + shotsTaken;
 	}
 
 	void Update ()
@@ -100,12 +103,7 @@ public class MissionDemolition : MonoBehaviour {
 
 	void NextLevel ()
 	{
-		level++;
-		if (level == levelMax)
-		{
-			level = 0;
-		}
-		StartLevel();
+		SceneManager.LoadScene("_Scene_" + Convert.ToString(level + 1));
 	}
 
 	public void SwitchView (string eView = "")
@@ -120,19 +118,16 @@ public class MissionDemolition : MonoBehaviour {
 		case "Show Slingshot":
 			FollowCam.POI = null;
 			uitButton.text = "Show Castle";
-			// set back3 active
 			break;
 
 		case "Show Castle":
 			FollowCam.POI = S.castle;
 			uitButton.text = "Show Both";
-			// set back3 active
 			break;
 
 		case "Show Both":
 			FollowCam.POI = GameObject.Find("ViewBoth");
 			uitButton.text = "Show Slingshot";
-			// iterate through array to set background 1 and 2 active
 			break;
 		}
 	}
