@@ -29,12 +29,13 @@ public class MissionDemolition : MonoBehaviour {
 	public GameMode mode = GameMode.idle;
 	public string showing = "Show Slingshot"; //FollowCam mode
 
-	
+	private MeshRenderer[] Mario;
 	// Use this for initialization
 	void Start () 
 	{
 		S = this; //Define the singleton
 		uiRestartButton.onClick.AddListener(StartLevel);
+		Mario = GameObject.Find("Mario").GetComponentsInChildren<MeshRenderer>();
 		
 		level = 0;
 		levelMax = castles.Length;
@@ -119,16 +120,19 @@ public class MissionDemolition : MonoBehaviour {
 		case "Show Slingshot":
 			FollowCam.POI = null;
 			uitButton.text = "Show Castle";
+			// set back3 active
 			break;
 
 		case "Show Castle":
 			FollowCam.POI = S.castle;
 			uitButton.text = "Show Both";
+			// set back3 active
 			break;
 
 		case "Show Both":
 			FollowCam.POI = GameObject.Find("ViewBoth");
 			uitButton.text = "Show Slingshot";
+			// iterate through array to set background 1 and 2 active
 			break;
 		}
 	}

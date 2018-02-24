@@ -17,6 +17,9 @@ public class Slingshot : MonoBehaviour {
 	public bool shotFiredRecently = false;
 
 	private Rigidbody projectileRigidbody;
+	private GameObject standing;
+	private GameObject throwing;
+	private GameObject jumping;
 
 	static public Vector3 LAUNCH_POS
 	{
@@ -30,6 +33,11 @@ public class Slingshot : MonoBehaviour {
 	void Awake()
 	{
 		S = this;
+		standing = GameObject.Find("MarioStanding");
+		throwing = GameObject.Find("MarioThrowing");
+		jumping = GameObject.Find("MarioJumping");
+		throwing.SetActive(false);
+		jumping.SetActive(false);
 		Transform launchPointTrans = transform.Find("LaunchPoint");
 		launchPoint = launchPointTrans.gameObject;
 		launchPoint.SetActive(false);
@@ -63,6 +71,9 @@ public class Slingshot : MonoBehaviour {
 
 		if (Input.GetMouseButtonUp(0))
 		{
+			throwing.SetActive(false);
+			jumping.SetActive(true);
+			Invoke("ShouldBeStanding", 1f);
 			//The mouse has been released
 			aimingMode = false;
 			projectileRigidbody.isKinematic = false;
@@ -81,6 +92,11 @@ public class Slingshot : MonoBehaviour {
 		shotFiredRecently = false;
 	}
 
+	void ShouldBeStanding()
+	{
+		standing.SetActive(true);
+		jumping.SetActive(false);
+	}
 	void OnMouseEnter()
 	{
 		//print("Slingshot:OnMouseEnter()");
@@ -97,6 +113,8 @@ public class Slingshot : MonoBehaviour {
 	{
 		if (shotFiredRecently) return;
 		//The player has pressed the mouse button while over Slingshot
+		throwing.SetActive(true);
+		standing.SetActive(false);
 		aimingMode = true;
 		//Instantiate a projectile
 		projectile = Instantiate(prefabProjectile) as GameObject;
