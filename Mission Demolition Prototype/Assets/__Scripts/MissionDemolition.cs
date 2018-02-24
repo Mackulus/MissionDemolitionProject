@@ -47,7 +47,7 @@ public class MissionDemolition : MonoBehaviour {
 
 	void StartLevel ()
 	{
-		castleGeneration.PlaceCastle();
+		//castleGeneration.PlaceCastle();
 		//Get rid of the old castle if one exists
 		if (castle != null)
 		{
@@ -136,5 +136,10 @@ public class MissionDemolition : MonoBehaviour {
 	public static void ShotFired()
 	{
 		S.shotsTaken++;
+	}
+
+	public static void ProjectileGained()
+	{
+		S.shotsTaken--;
 	}
 }

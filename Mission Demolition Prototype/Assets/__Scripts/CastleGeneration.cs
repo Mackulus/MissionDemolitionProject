@@ -7,14 +7,18 @@ public class CastleGeneration : MonoBehaviour {
 	public GameObject prefabCastle1;
 	public GameObject prefabCastle2;
 	public GameObject prefabCastle3;
+	public GameObject flagPrefab;
 	public Vector3 castlePosition;
+	public Vector3 flagPosition;
 
 	private GameObject castle;
+	private GameObject flag;
 	void Start () {
 		PlaceCastle();
+		PlaceFlag();
 	}
 
-	public void PlaceCastle()
+	private void PlaceCastle()
 	{
 		if (castle != null)
 		{
@@ -29,5 +33,15 @@ public class CastleGeneration : MonoBehaviour {
 		else if (random == 3)
 			castle = Instantiate(prefabCastle3);
 		castle.transform.position = castlePosition;
+	}
+
+	private void PlaceFlag()
+	{
+		if (flag != null)
+		{
+			Destroy(flag);
+		}
+		flag = Instantiate(flagPrefab);
+		flag.transform.position = flagPosition;
 	}
 }

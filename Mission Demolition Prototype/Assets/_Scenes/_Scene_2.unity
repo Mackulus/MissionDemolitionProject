@@ -471,7 +471,9 @@ MonoBehaviour:
     type: 2}
   prefabCastle3: {fileID: 1652973504779698, guid: daf1feb10a7765d41a82e65a38e7ab93,
     type: 2}
+  flagPrefab: {fileID: 1050231352431422, guid: e100b39ff8845834089ed6e809f747e9, type: 2}
   castlePosition: {x: 30, y: -6.2, z: 200}
+  flagPosition: {x: 65, y: 0, z: 0}
 --- !u!4 &511211504
 Transform:
   m_ObjectHideFlags: 0
