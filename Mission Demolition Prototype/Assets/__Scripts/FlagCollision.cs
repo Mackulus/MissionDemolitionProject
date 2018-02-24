@@ -9,7 +9,7 @@ public class FlagCollision : MonoBehaviour {
         if (collision.collider.CompareTag("Projectile"))
         {
             MissionDemolition.ProjectileGained();
-			GameObject.Find("Flagpole").SetActive(false);
+			GameObject.Find("Flagpole(Clone)").SetActive(false);
         }
     }
 }
