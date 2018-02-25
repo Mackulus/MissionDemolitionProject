@@ -80,6 +80,7 @@ public class Slingshot : MonoBehaviour {
 			FollowCam.POI = projectile;
 			projectile = null;
 			MissionDemolition.ShotFired();
+			ShowProjectilesLeft.GetClosestBall(true);
 			ProjectileLine.S.poi = projectile;
 			shotFiredRecently = true;
 			Invoke("ShotCanBeFired", 3f);
@@ -116,7 +117,9 @@ public class Slingshot : MonoBehaviour {
 		standing.SetActive(false);
 		aimingMode = true;
 		//Instantiate a projectile
-		projectile = Instantiate(prefabProjectile) as GameObject;
+		GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
+		projectile = Instantiate(prefabToUse) as GameObject;
+		projectile.tag = "Projectile";
 		//Start it at the launchPoint
 		projectile.transform.position = launchPos;
 		//Set it to isKinematic for now

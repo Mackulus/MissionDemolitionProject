@@ -9,7 +9,9 @@ public class WallCollision : MonoBehaviour {
         if (collision.collider.CompareTag("Projectile"))
         {
 			Rigidbody projectileRB = collision.collider.GetComponent<Rigidbody>();
-			if (projectileRB.velocity.x >= 15 || projectileRB.velocity.y >= 15 || projectileRB.velocity.z >= 15)
+			if (Mathf.Abs(projectileRB.velocity.x) >= 15 || 
+				Mathf.Abs(projectileRB.velocity.y) >= 15 || 
+				Mathf.Abs(projectileRB.velocity.z) >= 15)
 			{
 				this.gameObject.SetActive(false);
 			}

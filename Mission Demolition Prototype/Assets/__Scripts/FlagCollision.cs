@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class FlagCollision : MonoBehaviour {
 
+    public GameObject projprefab;
+
 	private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Projectile"))
         {
-            MissionDemolition.ProjectileGained();
+            ShowProjectilesLeft.AddBall(projprefab);
 			GameObject.Find("Flagpole(Clone)").SetActive(false);
         }
     }
