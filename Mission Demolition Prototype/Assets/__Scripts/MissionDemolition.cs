@@ -20,6 +20,7 @@ public class MissionDemolition : MonoBehaviour {
 	public Text uitScore;//The UIT_Score text
 	public Text uitShots; //The UIText_Shots text
 	public Text uitButton; //The Text on UIButton_View
+	public GameObject highScorePanel; //The Panel that displays if a score makes it on the highscore list
 	public Vector3 castlePos; //The place to put castles
 	public GameObject castlePrefab; //A reference to the castle prefab
 	public CastleGeneration castleGeneration; //A reference to the background castle generator
@@ -31,6 +32,8 @@ public class MissionDemolition : MonoBehaviour {
 	private int shotsTaken; //shots taken
 	private string showing = "Show Slingshot"; //FollowCam mode
 	private int score;
+	private bool nameEntered;
+	private int highScorePosition;
 
 	// Use this for initialization
 	void Start () 
@@ -111,8 +114,19 @@ public class MissionDemolition : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
+			int highScorePosition = HighScoreController.CheckForHighScore(score);
+			print(highScorePosition);
+			if (highScorePosition < 10)
+			{
+				StartCoroutine(WaitForName());
+			}
 			SceneManager.LoadScene("_Scene_MainMenu");
 		}
+	}
+
+	IEnumerator WaitForName()
+	{
+		yield return new WaitUntil(() => nameEntered == true);
 	}
 
 	void NextLevel ()
@@ -160,5 +174,11 @@ public class MissionDemolition : MonoBehaviour {
 	public static void PointsGained(int points)
 	{
 		S.score += points;
+	}
+
+	public static void SetNameEntered(string name)
+	{
+		HighScoreController.NewScore(name, S.highScorePosition);
+		S.nameEntered = true;
 	}
 }

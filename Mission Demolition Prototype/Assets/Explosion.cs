@@ -14,17 +14,14 @@ public class Explosion : MonoBehaviour
 	{
 		bomb = this.gameObject;
 		bomb.GetComponentInParent<AudioSource>().Play();
-		print("Shouldnt I be exploding?");
 		Vector3 explosionPos = transform.position;
 		Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
 		foreach (Collider hit in colliders)
 		{
-			print("Whoa I should be blasting stuff");
 			Rigidbody rb = hit.GetComponent<Rigidbody>();
 
 			if (rb != null)
 			{
-				print("Not a null rigidbody");
 				rb.AddExplosionForce(power, explosionPos, radius, 3.0F, ForceMode.Impulse);
 			}
 		}
