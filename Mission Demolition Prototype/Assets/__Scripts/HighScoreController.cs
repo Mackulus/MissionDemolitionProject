@@ -12,31 +12,49 @@ public class HighScoreController : MonoBehaviour {
 
 	public static int CheckForHighScore(int score)
 	{
-		int newScore, oldScore;
+		int newScore, oldScore, playerPosition;
 		string newName, oldName;
+		bool playerPositionSet;
 		newName = "fake";
 		newScore = score;
+		playerPosition = 10;
+		playerPositionSet = false;
 
 		for (int i = 0; i < highScoreAmount; i++) {
-			if (PlayerPrefs.HasKey("HighScoreName" + i)) {
-				oldScore = PlayerPrefs.GetInt("HighScore" + i);
+			if (PlayerPrefs.HasKey("MarioHighScoreName" + i)) {
+				oldScore = PlayerPrefs.GetInt("MarioHighScore" + i);
 				if (oldScore < newScore) {
-					oldName = PlayerPrefs.GetString("HighScoreName" + i);
-					PlayerPrefs.SetString("HighScoreName" + i, newName);
-					PlayerPrefs.SetInt("HighScore" + i, newScore);
+					if (!playerPositionSet && newScore == score)
+					{
+						playerPosition = i;
+						playerPositionSet = true;
+					}
+					oldName = PlayerPrefs.GetString("MarioHighScoreName" + i);
+					PlayerPrefs.SetString("MarioHighScoreName" + i, newName);
+					PlayerPrefs.SetInt("MarioHighScore" + i, newScore);
 					newName = oldName;
 					newScore = oldScore;
 				}
 			}
 			else {
-				PlayerPrefs.SetString("HighScoreName" + i, newName);
-				PlayerPrefs.SetInt("HighScore" + i, newScore);
+				if (!playerPositionSet && newScore == score)
+				{
+					playerPosition = i;
+					playerPositionSet = true;
+				}
+				PlayerPrefs.SetString("MarioHighScoreName" + i, newName);
+				PlayerPrefs.SetInt("MarioHighScore" + i, newScore);
+				i = highScoreAmount;
 			}
 		}
+
+		return playerPosition;
 	}
 
-	public static void NewScore(string name, int score) 
+	public static void NewScore(string name, int position) 
 	{
-		PlayerPrefs.SetString("MarioHighScoreName" + score, name);
+		
+		print("Setting name to " + name + "at MarioHighScoreName" + position);
+		PlayerPrefs.SetString("MarioHighScoreName" + position, name);
 	}
 }

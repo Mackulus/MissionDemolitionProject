@@ -114,19 +114,24 @@ public class MissionDemolition : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			int highScorePosition = HighScoreController.CheckForHighScore(score);
+			highScorePosition = HighScoreController.CheckForHighScore(score);
 			print(highScorePosition);
 			if (highScorePosition < 10)
 			{
+				highScorePanel.SetActive(true);
 				StartCoroutine(WaitForName());
 			}
-			SceneManager.LoadScene("_Scene_MainMenu");
+			else
+			{
+				SceneManager.LoadScene("_Scene_MainMenu");
+			}
 		}
 	}
 
 	IEnumerator WaitForName()
 	{
 		yield return new WaitUntil(() => nameEntered == true);
+		SceneManager.LoadScene("_Scene_MainMenu");
 	}
 
 	void NextLevel ()
