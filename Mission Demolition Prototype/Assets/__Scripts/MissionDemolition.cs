@@ -94,6 +94,10 @@ public class MissionDemolition : MonoBehaviour {
 		{
 			//Change mode to stop checking for level end
 			mode = GameMode.levelEnd;
+			if (!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name+"complete"))
+			{
+				PlayerPrefs.SetString(SceneManager.GetActiveScene().name+"complete", "true");
+			}
 			//Zoom out
 			SwitchView("Show Both");
 			//Start the next level in 2 seconds
