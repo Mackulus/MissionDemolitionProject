@@ -7,15 +7,10 @@ public class CheckForCompletion : MonoBehaviour {
 
 	public GameObject flag;
 
-	private string level;
-	private int levelNum;
-
 	// Use this for initialization
 	void Start () 
 	{
-		levelNum = Int32.Parse(transform.name.Substring(5))-1;
-		level = levelNum.ToString();
-		if (PlayerPrefs.HasKey("_Scene_"+level+"complete"))
+		if (PlayerPrefs.HasKey(transform.name+"complete"))
 		{
 			flag.SetActive(true);
 		}

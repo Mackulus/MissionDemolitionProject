@@ -17,6 +17,7 @@ public class MissionDemolition : MonoBehaviour {
 	[Header("Set in Inspector")]
 	//public Text uitLevel; //The UIText_Level text
 	public Button uiRestartButton; //The UIButton_Restart
+	public Text uitScore;//The UIT_Score text
 	public Text uitShots; //The UIText_Shots text
 	public Text uitButton; //The Text on UIButton_View
 	public Vector3 castlePos; //The place to put castles
@@ -29,11 +30,13 @@ public class MissionDemolition : MonoBehaviour {
 	private int level; //The current level
 	private int shotsTaken; //shots taken
 	private string showing = "Show Slingshot"; //FollowCam mode
+	private int score;
 
 	// Use this for initialization
 	void Start () 
 	{
 		S = this; //Define the singleton
+		S.score = 0;
 		uiRestartButton.onClick.AddListener(RestartGame);
 
 		level = Convert.ToInt16(SceneManager.GetActiveScene().name.Substring(7));
@@ -83,6 +86,8 @@ public class MissionDemolition : MonoBehaviour {
 		//Show the data in the GUITexts
 		//uitLevel.text = "Level: "+(level+1)+" of "+levelMax;
 		uitShots.text = "Shots Taken: " + shotsTaken;
+		uitScore.text = "Score: " + score;
+
 	}
 
 	void Update ()
@@ -94,9 +99,9 @@ public class MissionDemolition : MonoBehaviour {
 		{
 			//Change mode to stop checking for level end
 			mode = GameMode.levelEnd;
-			if (!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name+"complete"))
+			if (!PlayerPrefs.HasKey("Level " + (level+1) +"complete"))
 			{
-				PlayerPrefs.SetString(SceneManager.GetActiveScene().name+"complete", "true");
+				PlayerPrefs.SetString("Level " + (level+1) +"complete", "true");
 			}
 			//Zoom out
 			SwitchView("Show Both");
@@ -150,5 +155,10 @@ public class MissionDemolition : MonoBehaviour {
 	public static void ProjectileGained()
 	{
 		S.shotsTaken--;
+	}
+
+	public static void PointsGained(int points)
+	{
+		S.score += points;
 	}
 }
