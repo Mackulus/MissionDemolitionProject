@@ -99,6 +99,11 @@ public class MissionDemolition : MonoBehaviour {
 			//Start the next level in 2 seconds
 			Invoke("NextLevel", 2f);
 		}
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			SceneManager.LoadScene("_Scene_MainMenu");
+		}
 	}
 
 	void NextLevel ()
