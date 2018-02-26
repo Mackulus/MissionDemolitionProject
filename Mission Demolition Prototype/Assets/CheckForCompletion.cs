@@ -13,7 +13,6 @@ public class CheckForCompletion : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		print("Checking");
 		levelNum = Int32.Parse(transform.name.Substring(5))-1;
 		level = levelNum.ToString();
 		if (PlayerPrefs.HasKey("_Scene_"+level+"complete"))

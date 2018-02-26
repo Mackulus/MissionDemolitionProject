@@ -13,7 +13,6 @@ public class MarioLevelSelectController : MonoBehaviour {
 
 	public void OnMouseEnter()
 	{
-		print("Here");
 		mario.SetActive(true);
 	}
 
@@ -21,7 +20,6 @@ public class MarioLevelSelectController : MonoBehaviour {
 	{
 		if (!clicked)
 		{
-			print("There");
 			mario.SetActive(false);
 		}
 	}
