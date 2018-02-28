@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3f539fbb9a32e4713993090938c8332a
-timeCreated: 1519662036
+timeCreated: 1519832671
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,7 +13,7 @@ TextureImporter:
     21300012: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_6
     21300014: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_7
     21300016: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_8
-    21300018: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_9
+    21300018: Bowser
     21300020: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_10
     21300022: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_11
     21300024: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_12
@@ -234,9 +234,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 210
-        y: 677
+        y: 680
         width: 36
-        height: 35
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 1}
@@ -342,16 +342,16 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_9
+      name: Bowser
       rect:
         serializedVersion: 2
-        x: 311
-        y: 599
-        width: 80
-        height: 80
+        x: 313
+        y: 602
+        width: 76
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 1, z: 2, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -835,8 +835,8 @@ TextureImporter:
       name: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_44
       rect:
         serializedVersion: 2
-        x: 445
-        y: 401
+        x: 453
+        y: 393
         width: 196
         height: 79
       alignment: 0

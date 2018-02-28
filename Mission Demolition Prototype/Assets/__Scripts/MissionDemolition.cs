@@ -115,7 +115,6 @@ public class MissionDemolition : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			highScorePosition = HighScoreController.CheckForHighScore(score);
-			print(highScorePosition);
 			if (highScorePosition < 10)
 			{
 				highScorePanel.SetActive(true);

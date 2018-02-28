@@ -53,8 +53,6 @@ public class HighScoreController : MonoBehaviour {
 
 	public static void NewScore(string name, int position) 
 	{
-		
-		print("Setting name to " + name + "at MarioHighScoreName" + position);
 		PlayerPrefs.SetString("MarioHighScoreName" + position, name);
 	}
 }
