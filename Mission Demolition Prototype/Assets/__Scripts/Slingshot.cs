@@ -66,7 +66,8 @@ public class Slingshot : MonoBehaviour {
 
 		//Move the projectile to this new position
 		Vector3 projPos = launchPos + mouseDelta;
-		projectile.transform.position = projPos;
+		if (projectile != null)
+			projectile.transform.position = projPos;
 
 		if (Input.GetMouseButtonUp(0))
 		{
@@ -118,13 +119,19 @@ public class Slingshot : MonoBehaviour {
 		aimingMode = true;
 		//Instantiate a projectile
 		GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
-		projectile = Instantiate(prefabToUse) as GameObject;
-		projectile.tag = "Projectile";
-		//Start it at the launchPoint
-		projectile.transform.position = launchPos;
-		//Set it to isKinematic for now
-		projectileRigidbody = projectile.GetComponent<Rigidbody>();
-		projectileRigidbody.isKinematic = true;
+		if (prefabToUse == null)
+		{
+			// Do something to trigger end game
+		}
+		else {
+			projectile = Instantiate(prefabToUse) as GameObject;
+			projectile.tag = "Projectile";
+			//Start it at the launchPoint
+			projectile.transform.position = launchPos;
+			//Set it to isKinematic for now
+			projectileRigidbody = projectile.GetComponent<Rigidbody>();
+			projectileRigidbody.isKinematic = true;
+		}
 
 	}
 

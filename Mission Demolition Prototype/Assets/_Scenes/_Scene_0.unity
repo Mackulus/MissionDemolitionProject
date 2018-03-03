@@ -215,6 +215,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &117057688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 117057690}
+  - component: {fileID: 117057689}
+  m_Layer: 0
+  m_Name: BackgroundCastleGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &117057689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117057688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d415747d0ed10944924f3acf1a8cfd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabCastle1: {fileID: 1012831180445990, guid: 49c4f58253ab5614fa6f3efddc6072f0,
+    type: 2}
+  prefabCastle2: {fileID: 1604466404980258, guid: c104a52571ac7eb43ad0ebe15ef39e3d,
+    type: 2}
+  prefabCastle3: {fileID: 1652973504779698, guid: daf1feb10a7765d41a82e65a38e7ab93,
+    type: 2}
+  flagPrefab: {fileID: 1050231352431422, guid: e100b39ff8845834089ed6e809f747e9, type: 2}
+  castlePosition: {x: 30, y: -6.2, z: 200}
+  flagPosition: {x: 65, y: 0, z: 0}
+--- !u!4 &117057690
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117057688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172520578
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +423,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287430228
 GameObject:
@@ -420,7 +469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326117434
 GameObject:
@@ -558,56 +607,49 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &511211502
+--- !u!1 &440278570
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 511211504}
-  - component: {fileID: 511211503}
+  - component: {fileID: 440278572}
+  - component: {fileID: 440278571}
   m_Layer: 0
-  m_Name: BackgroundCastleGenerator
+  m_Name: HillsGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &511211503
+--- !u!114 &440278571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 511211502}
+  m_GameObject: {fileID: 440278570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d415747d0ed10944924f3acf1a8cfd5, type: 3}
+  m_Script: {fileID: 11500000, guid: f8c3103bde8369b4bbca16c04e457f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabCastle1: {fileID: 1012831180445990, guid: 49c4f58253ab5614fa6f3efddc6072f0,
-    type: 2}
-  prefabCastle2: {fileID: 1604466404980258, guid: c104a52571ac7eb43ad0ebe15ef39e3d,
-    type: 2}
-  prefabCastle3: {fileID: 1652973504779698, guid: daf1feb10a7765d41a82e65a38e7ab93,
-    type: 2}
-  flagPrefab: {fileID: 1050231352431422, guid: e100b39ff8845834089ed6e809f747e9, type: 2}
-  castlePosition: {x: 30, y: -6.2, z: 200}
-  flagPosition: {x: 65, y: 0, z: 0}
---- !u!4 &511211504
+  grassPatch: {fileID: 1130080113473596, guid: bad49864e2521f54790905d05a12d756, type: 2}
+  grassParent: {fileID: 1954875913}
+--- !u!4 &440278572
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 511211502}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_GameObject: {fileID: 440278570}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1954875914}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &542277932
 GameObject:
@@ -1853,10 +1895,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce1eec2cfff9463591cb73006f3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numClouds: 40
+  numClouds: 20
   cloudPrefab: {fileID: 1032997743952840, guid: 26788af7a168749f6b103180269de285,
     type: 2}
-  cloudPosMin: {x: -50, y: -5, z: 10}
+  cloudPosMin: {x: -50, y: 5, z: 10}
   cloudPosMax: {x: 150, y: 100, z: 10}
   cloudScaleMin: 1
   cloudScaleMax: 3
@@ -1880,7 +1922,7 @@ MonoBehaviour:
   castlePos: {x: 50, y: -5, z: 0}
   castlePrefab: {fileID: 1517424100207700, guid: 6e3f96923197a87469f9e47731ae67b8,
     type: 2}
-  castleGeneration: {fileID: 511211503}
+  castleGeneration: {fileID: 0}
 --- !u!1 &1451695614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,7 +2294,7 @@ RectTransform:
   - {fileID: 1479938817}
   - {fileID: 903633939}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2562,7 +2604,7 @@ Transform:
   - {fileID: 542277933}
   - {fileID: 1208649368}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725946922
 GameObject:
@@ -2711,6 +2753,35 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1954875913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1954875914}
+  m_Layer: 0
+  m_Name: HillParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1954875914
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954875913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 440278572}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063775445
 GameObject:
   m_ObjectHideFlags: 0

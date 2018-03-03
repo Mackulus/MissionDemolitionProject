@@ -46,6 +46,8 @@ public class ShowProjectilesLeft : MonoBehaviour {
 	static public GameObject GetClosestBall(bool isDestroying)
 	{
 		GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Dummy Projectile");
+		if (projectiles.Length == 0)
+			return null;
 		GameObject closest = projectiles[0];
 		foreach(GameObject go in projectiles)
 		{
