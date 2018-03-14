@@ -1919,8 +1919,8 @@ MonoBehaviour:
   uitShots: {fileID: 769089701}
   uitButton: {fileID: 951325061}
   highScorePanel: {fileID: 903633938}
-  castlePos: {x: 50, y: -5, z: 0}
-  castlePrefab: {fileID: 1517424100207700, guid: 6e3f96923197a87469f9e47731ae67b8,
+  castlePos: {x: 50, y: -9.5, z: 0}
+  castlePrefab: {fileID: 1645204975363150, guid: 646261718f2fe4700abadbab309b104e,
     type: 2}
   castleGeneration: {fileID: 0}
 --- !u!1 &1451695614

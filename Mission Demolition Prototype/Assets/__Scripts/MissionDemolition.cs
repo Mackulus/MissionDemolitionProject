@@ -13,6 +13,7 @@ public enum GameMode
 
 public class MissionDemolition : MonoBehaviour {
 	static private MissionDemolition S; // a private singleton
+	static private int totalScore = 0;
 
 	[Header("Set in Inspector")]
 	//public Text uitLevel; //The UIText_Level text
@@ -31,7 +32,6 @@ public class MissionDemolition : MonoBehaviour {
 	private int level; //The current level
 	private int shotsTaken; //shots taken
 	private string showing = "Show Slingshot"; //FollowCam mode
-	private int score;
 	private bool nameEntered;
 	private int highScorePosition;
 
@@ -39,7 +39,6 @@ public class MissionDemolition : MonoBehaviour {
 	void Start () 
 	{
 		S = this; //Define the singleton
-		S.score = 0;
 		uiRestartButton.onClick.AddListener(RestartGame);
 
 		level = Convert.ToInt16(SceneManager.GetActiveScene().name.Substring(7));
@@ -89,7 +88,7 @@ public class MissionDemolition : MonoBehaviour {
 		//Show the data in the GUITexts
 		//uitLevel.text = "Level: "+(level+1)+" of "+levelMax;
 		uitShots.text = "Shots Taken: " + shotsTaken;
-		uitScore.text = "Score: " + score;
+		uitScore.text = "Score: " + totalScore;
 
 	}
 
@@ -109,12 +108,12 @@ public class MissionDemolition : MonoBehaviour {
 			//Zoom out
 			SwitchView("Show Both");
 			//Start the next level in 2 seconds
-			Invoke("NextLevel", 2f);
+			Invoke("NextLevel", 3f);
 		}
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			highScorePosition = HighScoreController.CheckForHighScore(score);
+			highScorePosition = HighScoreController.CheckForHighScore(totalScore);
 			if (highScorePosition < 10)
 			{
 				highScorePanel.SetActive(true);
@@ -177,7 +176,7 @@ public class MissionDemolition : MonoBehaviour {
 
 	public static void PointsGained(int points)
 	{
-		S.score += points;
+		totalScore += points;
 	}
 
 	public static void SetNameEntered(string name)
