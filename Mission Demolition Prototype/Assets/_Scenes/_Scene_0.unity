@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotsForThisLevel: 3
-  projectilePrefab1: {fileID: 1788262601430748, guid: 0f3b8b86916770b4ab6d55ce0c6569ef,
+  projectilePrefab1: {fileID: 1174739790270466, guid: 6273166e0df1c48bb82f717d709071e6,
     type: 2}
   projectilePrefab2: {fileID: 1832639684618592, guid: 04b0aa63abcee9d4290121133e0ae8b4,
     type: 2}
