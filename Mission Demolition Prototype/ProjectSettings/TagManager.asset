@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Dummy Projectile
+  - UI_Icon
   layers:
   - Default
   - TransparentFX

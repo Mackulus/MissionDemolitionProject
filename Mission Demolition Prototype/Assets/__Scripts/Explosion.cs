@@ -12,25 +12,19 @@ public class Explosion : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-        print(collision.collider.name);
         if (collision.collider.name != "Ground" && collision.collider.name != "CastleGround"
             && collision.collider.name != "Mario" && collision.collider.tag != "Dummy Projectile" 
             && collision.collider.tag != "Projectile")
         {
-            print("collision");
             bomb = this.gameObject;
             //bomb.GetComponentInParent<AudioSource>().Play();
             Vector3 explosionPos = transform.position;
             Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
-            print(colliders);
             foreach (Collider hit in colliders)
             {
-                print(hit);
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
-                print(rb);
                 if (rb != null)
                 {
-                    print("explode");
                     rb.AddExplosionForce(power, explosionPos, radius, 3.0F, ForceMode.Impulse);
                 }
             }

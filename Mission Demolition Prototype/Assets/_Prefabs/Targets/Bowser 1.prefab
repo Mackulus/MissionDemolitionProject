@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4568009759068170}
   - component: {fileID: 212792045369130596}
-  - component: {fileID: 54130999814973404}
   - component: {fileID: 65727890480245776}
   - component: {fileID: 65874559831518578}
   - component: {fileID: 65186734389193404}
@@ -29,8 +28,9 @@ GameObject:
   - component: {fileID: 65886379088102510}
   - component: {fileID: 65739312225972454}
   - component: {fileID: 114014308766933728}
+  - component: {fileID: 54435367042692224}
   m_Layer: 0
-  m_Name: Bowser
+  m_Name: Bowser 1
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54130999814973404
+--- !u!54 &54435367042692224
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
