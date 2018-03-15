@@ -8,31 +8,31 @@ public class UI_IconDisplay : MonoBehaviour {
 	public int goalCount;
 	public Sprite emptyIcon;
 	public Sprite fullIcon;
-	private Sprite[] sprites;
+	private Image[] icons;
 	void Start () {
-		GameObject[] icons = GameObject.FindGameObjectsWithTag("UI_Icon");
-		sprites = new Sprite[icons.Length];
+		icons = gameObject.GetComponentsInChildren<Image>();
 		for (int i = 0; i < icons.Length; i++)
 		{
-			if (i < goalCount)
+			if (i >= goalCount)
 			{
-				sprites[i] = icons[i].GetComponent<Image>().sprite;
-			}
-			else
-			{
-				icons[i].SetActive(false);
+				icons[i].gameObject.SetActive(false);
 			}
 		}
 		// sprites are assigned in opposite order of expected (right to left)
 	}
 
-	private void UpdateIconDisplay()
+	public void UpdateIconDisplay()
 	{
-		for (int i = 0; i < sprites.Length; i++)
+		for (int i = 0; i < icons.Length; i++)
 		{
-			if (sprites[i] == emptyIcon)
+			print(i);
+			print(icons[i].sprite);
+			print(emptyIcon);
+			print(icons[i].sprite == emptyIcon);
+			if (icons[i].sprite == emptyIcon)
 			{
-				sprites[i] = fullIcon;
+				icons[i].sprite = fullIcon;
+				print(fullIcon);
 				return;
 			}
 		}

@@ -15,6 +15,7 @@ public class BowserGoal : MonoBehaviour {
 		//Check to see if it's a projectile
 		if (other.gameObject.tag == "Projectile" && hit == false)
 		{
+			GameObject.Find("Icons").GetComponent<UI_IconDisplay>().UpdateIconDisplay();
 			hit = true;
 			MissionDemolition.PointsGained(10);
 			Goal.goalMet = true;
