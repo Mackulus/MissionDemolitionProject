@@ -16,6 +16,7 @@ public class Explosion : MonoBehaviour
             && collision.collider.name != "Mario" && collision.collider.tag != "Dummy Projectile" 
             && collision.collider.tag != "Projectile")
         {
+			MissionDemolition.ExplosionView();
             bomb = this.gameObject;
             //bomb.GetComponentInParent<AudioSource>().Play();
             Vector3 explosionPos = transform.position;

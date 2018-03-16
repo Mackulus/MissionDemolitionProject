@@ -184,4 +184,9 @@ public class MissionDemolition : MonoBehaviour {
 		HighScoreController.NewScore(name, S.highScorePosition);
 		S.nameEntered = true;
 	}
+
+	public static void ExplosionView()
+	{
+		S.SwitchView("Show Both");
+	}
 }
