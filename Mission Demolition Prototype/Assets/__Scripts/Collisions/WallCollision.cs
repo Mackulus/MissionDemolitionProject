@@ -6,6 +6,7 @@ public class WallCollision : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
     {
+		print("Found it");
         if (collision.collider.CompareTag("Projectile"))
         {
 			Rigidbody projectileRB = collision.collider.GetComponent<Rigidbody>();

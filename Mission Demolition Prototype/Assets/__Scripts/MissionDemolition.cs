@@ -105,11 +105,21 @@ public class MissionDemolition : MonoBehaviour {
 			{
 				PlayerPrefs.SetString("Level " + (level+1) +"complete", "true");
 			}
+			PlaySound(0);
 			//Zoom out
 			SwitchView("Show Both");
 			//Start the next level in 2 seconds
-			Invoke("NextLevel", 3f);
+			Invoke("NextLevel", 8f);
 		}
+
+
+		//Something like this for level end, but needs to wait until things are at rest again
+		//else if ((mode == GameMode.playing) && ShowProjectilesLeft.GetClosestPrefab() == null)
+		//{
+		//	mode = GameMode.levelEnd;
+		//	PlaySound(2);
+		//	SwitchView("Show Both");
+		//}
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
@@ -188,5 +198,11 @@ public class MissionDemolition : MonoBehaviour {
 	public static void ExplosionView()
 	{
 		S.SwitchView("Show Both");
+	}
+
+	public static void PlaySound(int soundNumber)
+	{
+		print("here");
+		S.GetComponentsInParent<AudioSource>()[soundNumber].Play();
 	}
 }
