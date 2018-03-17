@@ -24,7 +24,7 @@ public class MissionDemolition : MonoBehaviour {
 	public GameObject highScorePanel; //The Panel that displays if a score makes it on the highscore list
 	public Vector3 castlePos; //The place to put castles
 	public GameObject castlePrefab; //A reference to the castle prefab
-	public CastleGeneration castleGeneration; //A reference to the background castle generator
+	//public CastleGeneration castleGeneration; //A reference to the background castle generator
 
 	[Header("Set Dynamically")]
 	private GameObject castle; //The current castle
@@ -108,7 +108,7 @@ public class MissionDemolition : MonoBehaviour {
 			PlaySound(0);
 			//Zoom out
 			SwitchView("Show Both");
-			//Start the next level in 2 seconds
+			//Start the next level in 8 seconds
 			Invoke("NextLevel", 8f);
 		}
 

@@ -25,16 +25,22 @@ public class UI_IconDisplay : MonoBehaviour {
 	{
 		for (int i = 0; i < icons.Length; i++)
 		{
-			print(i);
-			print(icons[i].sprite);
-			print(emptyIcon);
-			print(icons[i].sprite == emptyIcon);
 			if (icons[i].sprite == emptyIcon)
 			{
 				icons[i].sprite = fullIcon;
-				print(fullIcon);
 				return;
 			}
 		}
+	}
+
+	public Image[] GetImages()
+	{
+		Image[] result = new Image[goalCount];
+		for (int i = 0; i < icons.Length; i++)
+		{
+			if (icons[i].IsActive())
+				result[i] = icons[i];
+		}
+		return result;
 	}
 }
