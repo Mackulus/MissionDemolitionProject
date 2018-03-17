@@ -41,8 +41,9 @@ public class FollowCam : MonoBehaviour {
 				//if it is sleeping (that is, not moving)
 				if (POI.GetComponent<Rigidbody>().IsSleeping())
 				{
-					//return to default view
-					POI = null;
+                    //return to default view
+                    POI.gameObject.SetActive(false);
+                    POI = null;
 					//in the next update
 					return;
 				}
