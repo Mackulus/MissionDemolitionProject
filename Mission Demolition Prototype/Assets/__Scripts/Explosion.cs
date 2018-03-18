@@ -13,8 +13,7 @@ public class Explosion : MonoBehaviour
 	private void OnCollisionEnter(Collision collision)
 	{
         if (collision.collider.name != "Ground" && collision.collider.name != "CastleGround"
-            && collision.collider.name != "Mario" && collision.collider.tag != "Dummy Projectile" 
-            && collision.collider.tag != "Projectile")
+            && collision.collider.name != "Mario" && collision.collider.tag != "Dummy Projectile")
         {
 			MissionDemolition.ExplosionView();
             bomb = this.gameObject;
@@ -32,10 +31,6 @@ public class Explosion : MonoBehaviour
 	                Rigidbody rb = hit.GetComponent<Rigidbody>();
 	                if (rb != null)
 	                {
-						if(rb.isKinematic)
-						{
-							hit.GetComponent<Rigidbody>().isKinematic = false;
-						}
 	                    rb.AddExplosionForce(power, explosionPos, radius, 3.0F, ForceMode.Impulse);
 	                }
 				}

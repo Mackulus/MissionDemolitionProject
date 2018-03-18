@@ -7,7 +7,7 @@ public class WallCollision : MonoBehaviour {
 	private void OnCollisionEnter(Collision collision)
     {
 		//print("Found it");
-        if (collision.collider.CompareTag("Projectile"))
+		if (collision.collider.CompareTag("Projectile") || collision.collider.CompareTag("CanHurtEnemy"))
         {
 			print("Changing Tag");
 			this.gameObject.tag = "CanHurtEnemy";

@@ -26,7 +26,7 @@ public class ProjectileController : MonoBehaviour {
 	{
 		if (this.GetComponent<Rigidbody>().IsSleeping() && collisionHasHappened == true)
 		{
-			DestroyObject(this);
+			Destroy(this.gameObject);
 		}
 	}
 }
