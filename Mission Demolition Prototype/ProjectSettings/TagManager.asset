@@ -10,6 +10,7 @@ TagManager:
   - Brick
   - Goomba
   - CanHurtEnemy
+  - Bomb
   layers:
   - Default
   - TransparentFX

@@ -11,8 +11,10 @@ public class ShowProjectilesLeft : MonoBehaviour {
 	public GameObject projectilePrefab1;
 	public GameObject projectilePrefab2;
 	public Vector3 startLoc;
+	static private Vector3 startLocIfEmpty;
 
 	void Start () {
+		startLocIfEmpty = startLoc;
 		for (int i = 0; i < shotsForThisLevel; i++)
 		{
 			GameObject projectile = Instantiate(projectilePrefab1);
@@ -46,13 +48,16 @@ public class ShowProjectilesLeft : MonoBehaviour {
 	static public void AddRewardBall(GameObject projectilePrefab)
 	{
 		GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Dummy Projectile");
-		Vector3 spotToAdd = projectiles[0].transform.position;
-		GameObject prefabToSend = projectiles[0];
-		DestroyObject(projectiles[0]);
+		Vector3 spotToAdd = startLocIfEmpty;
 		GameObject firstProj = Instantiate<GameObject>(projectilePrefab);
 		firstProj.transform.position = spotToAdd;
 		firstProj.tag = "Dummy Projectile";
-		AddBall(prefabToSend);
+		if (projectiles.Length != 0)
+		{
+			GameObject prefabToSend = projectiles[0];
+			DestroyObject(projectiles[0]);
+			AddBall(prefabToSend);
+		}
 	}
 
 	static public GameObject GetClosestBall(bool isDestroying)
