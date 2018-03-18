@@ -10,7 +10,7 @@ public class FlagCollision : MonoBehaviour {
     {
         if (collision.collider.CompareTag("Projectile"))
         {
-            ShowProjectilesLeft.AddBall(projprefab);
+            ShowProjectilesLeft.AddRewardBall(projprefab);
 			GameObject.Find("Flagpole(Clone)").SetActive(false);
         }
     }

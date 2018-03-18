@@ -43,6 +43,18 @@ public class ShowProjectilesLeft : MonoBehaviour {
 		newProj.tag = "Dummy Projectile";
 	}
 
+	static public void AddRewardBall(GameObject projectilePrefab)
+	{
+		GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Dummy Projectile");
+		Vector3 spotToAdd = projectiles[0].transform.position;
+		GameObject prefabToSend = projectiles[0];
+		DestroyObject(projectiles[0]);
+		GameObject firstProj = Instantiate<GameObject>(projectilePrefab);
+		firstProj.transform.position = spotToAdd;
+		firstProj.tag = "Dummy Projectile";
+		AddBall(prefabToSend);
+	}
+
 	static public GameObject GetClosestBall(bool isDestroying)
 	{
 		GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Dummy Projectile");
