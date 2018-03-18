@@ -108,19 +108,10 @@ public class MissionDemolition : MonoBehaviour {
 			PlaySound(0);
 			//Zoom out
 			SwitchView("Show Both");
-			//Start the next level in 8 seconds
-			Invoke("NextLevel", 8f);
+			//Start the next level in 7.5 seconds
+			Invoke("NextLevel", 7f);
 		}
-
-
-		//Something like this for level end, but needs to wait until things are at rest again
-		//else if ((mode == GameMode.playing) && ShowProjectilesLeft.GetClosestPrefab() == null)
-		//{
-		//	mode = GameMode.levelEnd;
-		//	PlaySound(2);
-		//	SwitchView("Show Both");
-		//}
-
+			
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			highScorePosition = HighScoreController.CheckForHighScore(totalScore);

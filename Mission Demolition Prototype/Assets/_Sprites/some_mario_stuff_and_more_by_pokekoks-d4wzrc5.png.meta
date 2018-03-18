@@ -37,9 +37,9 @@ TextureImporter:
     21300060: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_30
     21300062: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_31
     21300064: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_32
-    21300066: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_33
+    21300066: Brick
     21300068: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_34
-    21300070: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_35
+    21300070: Brick
     21300072: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_36
     21300074: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_37
     21300076: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_38
@@ -140,6 +140,7 @@ TextureImporter:
     21300266: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_133
     21300268: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_134
     21300270: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_135
+    21300272: BrickLight
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -678,7 +679,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_33
+      name: BrickLight
       rect:
         serializedVersion: 2
         x: 641
@@ -706,7 +707,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: some_mario_stuff_and_more_by_pokekoks-d4wzrc5_35
+      name: Brick
       rect:
         serializedVersion: 2
         x: 679

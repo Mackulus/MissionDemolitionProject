@@ -11,6 +11,8 @@ public class GoombaAddPoints : MonoBehaviour {
 		if (collision.collider.CompareTag("Projectile") && hit == false)
 		{
 			print("I've been hit!");
+			RigidbodyConstraints afterHit = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;	
+			this.GetComponent<Rigidbody>().constraints = afterHit;
 			hit = true;
 			MissionDemolition.PointsGained(1);
 			Invoke("Deactivate", 2f);
@@ -19,6 +21,6 @@ public class GoombaAddPoints : MonoBehaviour {
 
 	public void Deactivate()
 	{
-		this.gameObject.SetActive(false);
+		Destroy(this.gameObject);
 	}
 }

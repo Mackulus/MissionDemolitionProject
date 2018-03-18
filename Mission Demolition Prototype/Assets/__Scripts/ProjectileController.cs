@@ -24,16 +24,9 @@ public class ProjectileController : MonoBehaviour {
 
 	void Update()
 	{
-		print("Collision has happened = " + collisionHasHappened);
-		print("Sleeping = " + this.GetComponent<Rigidbody>().IsSleeping());
 		if (this.GetComponent<Rigidbody>().IsSleeping() && collisionHasHappened == true)
 		{
-			print("true");
 			DestroyObject(this);
-		}
-		else
-		{
-			print("false");
 		}
 	}
 }

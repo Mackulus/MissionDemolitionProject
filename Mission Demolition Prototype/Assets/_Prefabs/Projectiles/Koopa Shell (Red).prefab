@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4546176443960684}
   - component: {fileID: 54762882187164612}
   - component: {fileID: 135479247597232450}
+  - component: {fileID: 114589186865928602}
   m_Layer: 0
   m_Name: Koopa Shell (Red)
   m_TagString: Projectile
@@ -200,6 +201,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 1
+--- !u!114 &114589186865928602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788262601430748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213ce981453e94619840be1ce315a8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135479247597232450
 SphereCollider:
   m_ObjectHideFlags: 1

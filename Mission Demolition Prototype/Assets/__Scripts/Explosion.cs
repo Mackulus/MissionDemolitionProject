@@ -23,11 +23,22 @@ public class Explosion : MonoBehaviour
             Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
             foreach (Collider hit in colliders)
             {
-                Rigidbody rb = hit.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.AddExplosionForce(power, explosionPos, radius, 3.0F, ForceMode.Impulse);
-                }
+				if (hit.tag == "Brick")
+				{
+					DestroyObject(hit.gameObject);
+				}
+				else
+				{
+	                Rigidbody rb = hit.GetComponent<Rigidbody>();
+	                if (rb != null)
+	                {
+						if(rb.isKinematic)
+						{
+							hit.GetComponent<Rigidbody>().isKinematic = false;
+						}
+	                    rb.AddExplosionForce(power, explosionPos, radius, 3.0F, ForceMode.Impulse);
+	                }
+				}
             }
 
             bomb.SetActive(false);
