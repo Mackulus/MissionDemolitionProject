@@ -1256,22 +1256,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1832639684618592, guid: 04b0aa63abcee9d4290121133e0ae8b4, type: 2}
       propertyPath: m_Name
-      value: Koopa Shell (Green) 2
+      value: WallDestroyer
       objectReference: {fileID: 0}
     - target: {fileID: 54304610913481054, guid: 04b0aa63abcee9d4290121133e0ae8b4,
         type: 2}
       propertyPath: m_Constraints
-      value: 88
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 54304610913481054, guid: 04b0aa63abcee9d4290121133e0ae8b4,
         type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 54304610913481054, guid: 04b0aa63abcee9d4290121133e0ae8b4,
         type: 2}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135375301670821878, guid: 04b0aa63abcee9d4290121133e0ae8b4,
+        type: 2}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b0aa63abcee9d4290121133e0ae8b4, type: 2}
@@ -1414,6 +1419,23 @@ Transform:
   m_Father: {fileID: 2063775446}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1093338750 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1832639684618592, guid: 04b0aa63abcee9d4290121133e0ae8b4,
+    type: 2}
+  m_PrefabInternal: {fileID: 969583870}
+--- !u!114 &1093338751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093338750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbf3b58b367e464291572bfff89df99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallDestroyer: {fileID: 1093338750}
 --- !u!1 &1208649365
 GameObject:
   m_ObjectHideFlags: 0
@@ -2791,7 +2813,7 @@ Prefab:
     - target: {fileID: 224481426138008914, guid: 8664614f849749144a43d25a90898fcf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 106.5
+      value: 104.33333
       objectReference: {fileID: 0}
     - target: {fileID: 224481426138008914, guid: 8664614f849749144a43d25a90898fcf,
         type: 2}
@@ -2811,7 +2833,7 @@ Prefab:
     - target: {fileID: 224160381405637300, guid: 8664614f849749144a43d25a90898fcf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 319.5
+      value: 313
       objectReference: {fileID: 0}
     - target: {fileID: 224160381405637300, guid: 8664614f849749144a43d25a90898fcf,
         type: 2}
@@ -2831,7 +2853,7 @@ Prefab:
     - target: {fileID: 224586567244288428, guid: 8664614f849749144a43d25a90898fcf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 532.5
+      value: 521.6666
       objectReference: {fileID: 0}
     - target: {fileID: 224586567244288428, guid: 8664614f849749144a43d25a90898fcf,
         type: 2}
