@@ -8,7 +8,7 @@ public class GoombaAddPoints : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if ((collision.collider.CompareTag("Projectile") || collision.collider.CompareTag("Goomba")) && hit == false)
+		if ((collision.collider.CompareTag("Projectile") || collision.collider.CompareTag("Goomba") || collision.collider.CompareTag("CanHurtEnemy")) && hit == false)
 		{
 			print("I've been hit!");
 			RigidbodyConstraints afterHit = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;	
