@@ -101,6 +101,11 @@ public class MissionDemolition : MonoBehaviour {
 		{
 			//Change mode to stop checking for level end
 			mode = GameMode.levelEnd;
+			GameObject projLeft = GameObject.FindGameObjectWithTag("Projectile");
+			if (projLeft != null)
+			{
+				Destroy(projLeft);
+			}
 			if (!PlayerPrefs.HasKey("Level " + (level+1) +"complete"))
 			{
 				PlayerPrefs.SetString("Level " + (level+1) +"complete", "true");

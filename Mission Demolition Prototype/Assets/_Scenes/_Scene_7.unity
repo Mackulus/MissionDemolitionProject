@@ -498,6 +498,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 326117434}
+--- !u!1 &347996496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1645204975363150, guid: 646261718f2fe4700abadbab309b104e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 347996497}
+  m_Layer: 0
+  m_Name: Castle_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &347996497
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4353281271161784, guid: 646261718f2fe4700abadbab309b104e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347996496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50, y: -9.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &361616593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1910,6 @@ MonoBehaviour:
   castlePos: {x: 50, y: -5, z: 0}
   castlePrefab: {fileID: 1517424100207700, guid: 6e3f96923197a87469f9e47731ae67b8,
     type: 2}
-  castleGeneration: {fileID: 511211503}
 --- !u!1 &1451695614
 GameObject:
   m_ObjectHideFlags: 0
