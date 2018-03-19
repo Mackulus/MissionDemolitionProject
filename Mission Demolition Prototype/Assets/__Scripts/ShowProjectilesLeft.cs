@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class ShowProjectilesLeft : MonoBehaviour {
@@ -90,6 +92,6 @@ public class ShowProjectilesLeft : MonoBehaviour {
 	static public GameObject GetClosestPrefab()
 	{
 		GameObject go = GetClosestBall(false);
-		return PrefabUtility.FindPrefabRoot(go);
+		return(go);
 	}
 }
