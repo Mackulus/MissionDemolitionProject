@@ -13,14 +13,26 @@ public class spawnAnotherWallDestroyer : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Projectile")
+        Collider[] colliders = Physics.OverlapSphere(startPos, .1f);
+
+        if (collision.collider.tag == "Projectile" && (colliders.Length == 0 || 
+            (colliders.Length == 1 && colliders[0].name == "WallDestroyer")))
         {
             Invoke("createNewDestroyer", 1f);
+        }
+        else if (collision.collider.tag == "Projectile")
+        {
+            //print(colliders);
+            foreach (Collider c in colliders)
+            {
+                print(c);
+            }
         }
     }
 
     private void createNewDestroyer()
     {
-        Instantiate(wallDestroyer).transform.position = startPos;
+        GameObject newWallDestroyer = Instantiate(wallDestroyer);
+        newWallDestroyer.transform.position = startPos;
     }
 }
