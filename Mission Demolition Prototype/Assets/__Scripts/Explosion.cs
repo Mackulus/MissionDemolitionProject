@@ -12,6 +12,11 @@ public class Explosion : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
+        if (gameObject.transform.position.x >= 70 && collision.collider.name == "Ground")
+        {
+            MissionDemolition.ExplosionView();
+            gameObject.SetActive(false);
+        }
         if (collision.collider.name != "Ground" && collision.collider.name != "CastleGround"
             && collision.collider.name != "Mario" && collision.collider.tag != "Dummy Projectile"
             && collision.collider.tag != "Projectile" && collision.collider.tag != "Brick")
