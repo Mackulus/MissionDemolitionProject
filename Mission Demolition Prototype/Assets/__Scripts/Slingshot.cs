@@ -49,13 +49,13 @@ public class Slingshot : MonoBehaviour {
 	{
         if (FollowCam.POI == null && !shotFiredRecently)
         {
-            GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
+            /*GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
             if (prefabToUse == null && !IsInvoking("showLoseScreen"))
             {
                 print("started invoking");
                 
                 Invoke("showLoseScreen", 8f);
-            }
+            }*/
         }
 		// If Slinghsot is not in aimingMode, don't run this code
 		if (!aimingMode) return;
@@ -101,8 +101,20 @@ public class Slingshot : MonoBehaviour {
 		}
 	}
 
-    private void showLoseScreen()
+	public static void CallLoseScreen()
+	{
+		GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
+		if (prefabToUse == null && !IsInvoking("S.showLoseScreen"))
+		{
+			print("started invoking");
+
+			Invoke("S.showLoseScreen", 8f);
+		}
+	}
+
+    public void showLoseScreen()
     {
+		MissionDemolition.PlaySound(2);
         loseScreen.SetActive(true);
     }
 

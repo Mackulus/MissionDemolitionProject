@@ -24,7 +24,7 @@ public class Explosion : MonoBehaviour
 			print(collision.collider.name);
 			MissionDemolition.ExplosionView();
             bomb = this.gameObject;
-            //bomb.GetComponentInParent<AudioSource>().Play();
+			MissionDemolition.PlaySound(3);
             Vector3 explosionPos = transform.position;
             Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
             foreach (Collider hit in colliders)

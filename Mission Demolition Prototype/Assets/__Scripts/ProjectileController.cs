@@ -27,6 +27,7 @@ public class ProjectileController : MonoBehaviour {
 		if (this.GetComponent<Rigidbody>().IsSleeping() && collisionHasHappened == true)
 		{
 			Destroy(this.gameObject);
+			Slingshot.CallLoseScreen();
 		}
 	}
 }
