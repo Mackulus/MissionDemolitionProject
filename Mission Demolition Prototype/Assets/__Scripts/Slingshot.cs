@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
@@ -7,6 +8,7 @@ public class Slingshot : MonoBehaviour {
 	[Header("Set in Inspector")]
 	public GameObject prefabProjectile;
 	public float velocityMult = 8f;
+    public GameObject loseScreen;
 
 	//fields set dynamically
 	[Header("Set Dynamically")]
@@ -45,6 +47,11 @@ public class Slingshot : MonoBehaviour {
 
 	void Update()
 	{
+        GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
+        if (prefabToUse == null)
+        {
+            showLoseScreen();
+        }
 		// If Slinghsot is not in aimingMode, don't run this code
 		if (!aimingMode) return;
 
@@ -88,7 +95,12 @@ public class Slingshot : MonoBehaviour {
 		}
 	}
 
-	void ShotCanBeFired()
+    private void showLoseScreen()
+    {
+        loseScreen.SetActive(true);
+    }
+
+    void ShotCanBeFired()
 	{
 		shotFiredRecently = false;
 	}
