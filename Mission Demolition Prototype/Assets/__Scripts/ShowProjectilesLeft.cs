@@ -11,7 +11,7 @@ public class ShowProjectilesLeft : MonoBehaviour {
 	public GameObject projectilePrefab1;
 	public GameObject projectilePrefab2;
 	public Vector3 startLoc;
-	static private Vector3 startLocIfEmpty;
+	static public Vector3 startLocIfEmpty;
 
 	void Start () {
 		startLocIfEmpty = startLoc;
@@ -55,7 +55,7 @@ public class ShowProjectilesLeft : MonoBehaviour {
 		if (projectiles.Length != 0)
 		{
 			GameObject prefabToSend = projectiles[0];
-			DestroyObject(projectiles[0]);
+			Destroy(projectiles[0]);
 			AddBall(prefabToSend);
 		}
 	}
@@ -66,11 +66,14 @@ public class ShowProjectilesLeft : MonoBehaviour {
 		if (projectiles.Length == 0)
 			return null;
 		GameObject closest = projectiles[0];
+		print("before loop: " + closest);
 		foreach(GameObject go in projectiles)
 		{
-			if (go.transform.position.x > closest.transform.position.x)
+			print("Go: + " + go + " position: " + go.transform.position.x);
+			if (go.transform.position.x >= closest.transform.position.x)
 			{
 				closest = go;
+				print("Changed to " + closest);
 			}
 			if (isDestroying)
 			{
@@ -79,6 +82,7 @@ public class ShowProjectilesLeft : MonoBehaviour {
 				go.transform.position = pos;
 			}
 		}
+		print("Now it's: " + closest);
 		if (isDestroying) { closest.gameObject.SetActive(false); }
 		return closest;
 	}
