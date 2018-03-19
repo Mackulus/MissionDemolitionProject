@@ -18,6 +18,7 @@ public class MissionDemolition : MonoBehaviour {
 	[Header("Set in Inspector")]
 	//public Text uitLevel; //The UIText_Level text
 	public Button uiRestartButton; //The UIButton_Restart
+    public Button loseButton; // Button to restart level when you lose
 	public Text uitScore;//The UIT_Score text
 	public Text uitShots; //The UIText_Shots text
 	public Text uitButton; //The Text on UIButton_View
@@ -40,6 +41,7 @@ public class MissionDemolition : MonoBehaviour {
 	{
 		S = this; //Define the singleton
 		uiRestartButton.onClick.AddListener(RestartGame);
+        loseButton.onClick.AddListener(RestartGame);
 
 		level = Convert.ToInt16(SceneManager.GetActiveScene().name.Substring(7));
 		StartLevel();
