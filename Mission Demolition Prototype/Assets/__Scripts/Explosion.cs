@@ -19,7 +19,7 @@ public class Explosion : MonoBehaviour
         }
         if (collision.collider.name != "Ground" && collision.collider.name != "CastleGround"
             && collision.collider.name != "Mario" && collision.collider.tag != "Dummy Projectile"
-			&& collision.collider.tag != "Brick" && !collision.collider.name.Contains("Projectile "))
+			&& collision.collider.tag != "HoldingProjectile" && transform.tag != "Dummy Projectile")
         {
 			print(collision.collider.name);
 			MissionDemolition.ExplosionView();

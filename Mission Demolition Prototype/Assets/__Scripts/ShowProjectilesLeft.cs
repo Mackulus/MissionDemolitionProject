@@ -21,6 +21,8 @@ public class ShowProjectilesLeft : MonoBehaviour {
 			projectile.transform.position = startLoc;
 			projectile.name = "Projectile " + Convert.ToString(i);
 			projectile.tag = "Dummy Projectile";
+			Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
+			projectileRigidbody.isKinematic = true;
 			startLoc.x -= 2;
 		}	
 	}
@@ -52,6 +54,8 @@ public class ShowProjectilesLeft : MonoBehaviour {
 		GameObject firstProj = Instantiate<GameObject>(projectilePrefab);
 		firstProj.transform.position = spotToAdd;
 		firstProj.tag = "Dummy Projectile";
+		Rigidbody projectileRigidbody = firstProj.GetComponent<Rigidbody>();
+		projectileRigidbody.isKinematic = true;
 		if (projectiles.Length != 0)
 		{
 			GameObject prefabToSend = projectiles[0];

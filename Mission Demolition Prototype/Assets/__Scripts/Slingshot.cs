@@ -50,7 +50,7 @@ public class Slingshot : MonoBehaviour {
         GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
         if (prefabToUse == null)
         {
-            showLoseScreen();
+			Invoke("showLoseScreen", 8f);
         }
 		// If Slinghsot is not in aimingMode, don't run this code
 		if (!aimingMode) return;
@@ -83,6 +83,7 @@ public class Slingshot : MonoBehaviour {
 			Invoke("ShouldBeStanding", 1f);
 			//The mouse has been released
 			aimingMode = false;
+			projectile.tag = "Projectile";
 			projectileRigidbody.isKinematic = false;
 			projectileRigidbody.velocity = -mouseDelta * velocityMult;
 			FollowCam.POI = projectile;
@@ -137,7 +138,7 @@ public class Slingshot : MonoBehaviour {
 		}
 		else {
 			projectile = Instantiate(prefabToUse) as GameObject;
-			projectile.tag = "Projectile";
+			projectile.tag = "HoldingProjectile";
 			//Start it at the launchPoint
 			projectile.transform.position = launchPos;
 			//Set it to isKinematic for now

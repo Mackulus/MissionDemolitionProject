@@ -200,7 +200,6 @@ public class MissionDemolition : MonoBehaviour {
 
 	public static void PlaySound(int soundNumber)
 	{
-		print("here");
 		S.GetComponentsInParent<AudioSource>()[soundNumber].Play();
 	}
 }
