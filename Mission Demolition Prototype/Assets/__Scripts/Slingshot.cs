@@ -81,7 +81,7 @@ public class Slingshot : MonoBehaviour {
 			FollowCam.POI = projectile;
 			projectile = null;
 			MissionDemolition.ShotFired();
-			ShowProjectilesLeft.GetClosestBall(true);
+			//ShowProjectilesLeft.GetClosestBall(true);
 			ProjectileLine.S.poi = projectile;
 			shotFiredRecently = true;
 			Invoke("ShotCanBeFired", 3f);
@@ -131,6 +131,7 @@ public class Slingshot : MonoBehaviour {
 			//Set it to isKinematic for now
 			projectileRigidbody = projectile.GetComponent<Rigidbody>();
 			projectileRigidbody.isKinematic = true;
+			ShowProjectilesLeft.GetClosestBall(true);
 		}
 
 	}
