@@ -1221,6 +1221,7 @@ MonoBehaviour:
   prefabProjectile: {fileID: 1788262601430748, guid: 0f3b8b86916770b4ab6d55ce0c6569ef,
     type: 2}
   velocityMult: 11
+  loseScreen: {fileID: 1198388367993504, guid: 56277244f34799043b52eb27fcb4468e, type: 2}
 --- !u!1 &1085114820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,14 +1874,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiRestartButton: {fileID: 656314804}
+  loseButton: {fileID: 114268361576544480, guid: 56277244f34799043b52eb27fcb4468e,
+    type: 2}
   uitScore: {fileID: 1479938818}
   uitShots: {fileID: 769089701}
   uitButton: {fileID: 951325061}
   highScorePanel: {fileID: 903633938}
-  castlePos: {x: 50, y: -5, z: 0}
-  castlePrefab: {fileID: 1517424100207700, guid: 6e3f96923197a87469f9e47731ae67b8,
+  castlePos: {x: 50, y: -9.5, z: 0}
+  castlePrefab: {fileID: 1733787998583436, guid: 6467f2bf9883b92439b84a7030323d12,
     type: 2}
-  castleGeneration: {fileID: 511211503}
 --- !u!1 &1451695614
 GameObject:
   m_ObjectHideFlags: 0

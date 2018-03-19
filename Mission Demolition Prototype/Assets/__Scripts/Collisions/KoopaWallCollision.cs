@@ -12,7 +12,10 @@ public class KoopaWallCollision : MonoBehaviour {
         }
         else if (other.tag == "Projectile")
         {
-            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            if (other.GetComponent<Explosion>())
+            {
+                other.gameObject.SetActive(false);
+            }
         }
     }
 }
