@@ -66,14 +66,11 @@ public class ShowProjectilesLeft : MonoBehaviour {
 		if (projectiles.Length == 0)
 			return null;
 		GameObject closest = projectiles[0];
-		print("before loop: " + closest);
 		foreach(GameObject go in projectiles)
 		{
-			print("Go: + " + go + " position: " + go.transform.position.x);
 			if (go.transform.position.x >= closest.transform.position.x)
 			{
 				closest = go;
-				print("Changed to " + closest);
 			}
 			if (isDestroying)
 			{
@@ -82,7 +79,6 @@ public class ShowProjectilesLeft : MonoBehaviour {
 				go.transform.position = pos;
 			}
 		}
-		print("Now it's: " + closest);
 		if (isDestroying) { closest.gameObject.SetActive(false); }
 		return closest;
 	}
