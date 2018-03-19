@@ -19,6 +19,7 @@ public class MissionDemolition : MonoBehaviour {
 	//public Text uitLevel; //The UIText_Level text
 	public Button uiRestartButton; //The UIButton_Restart
     public Button loseButton; // Button to restart level when you lose
+	public GameObject loseScreen; 
 	public Text uitScore;//The UIT_Score text
 	public Text uitShots; //The UIText_Shots text
 	public Text uitButton; //The Text on UIButton_View
@@ -37,6 +38,10 @@ public class MissionDemolition : MonoBehaviour {
 	private int highScorePosition;
     private int currentScore;
 
+	void Awake()
+	{
+		loseScreen = GameObject.Find("Canvas").transform.Find("LoseScreen").gameObject;
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -125,16 +130,7 @@ public class MissionDemolition : MonoBehaviour {
 			
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			highScorePosition = HighScoreController.CheckForHighScore(totalScore);
-			if (highScorePosition < 10)
-			{
-				highScorePanel.SetActive(true);
-				StartCoroutine(WaitForName());
-			}
-			else
-			{
-				SceneManager.LoadScene("_Scene_MainMenu");
-			}
+			CheckHighScore();
 		}
 	}
 
@@ -144,9 +140,34 @@ public class MissionDemolition : MonoBehaviour {
 		SceneManager.LoadScene("_Scene_MainMenu");
 	}
 
+	void CheckHighScore()
+	{
+		print("CheckHighScore");
+		highScorePosition = HighScoreController.CheckForHighScore(totalScore);
+		print(highScorePosition);
+		if (highScorePosition < 10)
+		{
+			loseScreen.SetActive(false);
+			highScorePanel.SetActive(true);
+			StartCoroutine(WaitForName());
+		}
+		else
+		{
+			SceneManager.LoadScene("_Scene_MainMenu");
+		}
+	}
+
 	void NextLevel ()
 	{
-		SceneManager.LoadScene("_Scene_" + Convert.ToString(level + 1));
+		print(SceneManager.GetActiveScene().name);
+		if(SceneManager.GetActiveScene().name == "_Scene_11")
+		{
+			CheckHighScore();
+		}
+		else
+		{
+			SceneManager.LoadScene("_Scene_" + Convert.ToString(level + 1));
+		}
 	}
 
 	public void SwitchView (string eView = "")

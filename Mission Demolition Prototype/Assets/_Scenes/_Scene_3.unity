@@ -1488,6 +1488,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1198388367993504, guid: 56277244f34799043b52eb27fcb4468e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56277244f34799043b52eb27fcb4468e, type: 2}
   m_IsPrefabParent: 0
@@ -1687,7 +1691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1291917739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2083,6 +2087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiRestartButton: {fileID: 656314804}
   loseButton: {fileID: 1087458249}
+  loseScreen: {fileID: 0}
   uitScore: {fileID: 1479938818}
   uitShots: {fileID: 769089701}
   uitButton: {fileID: 951325061}
