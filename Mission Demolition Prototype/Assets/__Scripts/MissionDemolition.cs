@@ -35,6 +35,8 @@ public class MissionDemolition : MonoBehaviour {
 	private string showing = "Show Slingshot"; //FollowCam mode
 	private bool nameEntered;
 	private int highScorePosition;
+    private int currentScore;
+
 
 	// Use this for initialization
 	void Start () 
@@ -49,6 +51,7 @@ public class MissionDemolition : MonoBehaviour {
 	
 	void RestartGame()
 	{
+        totalScore = currentScore;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
@@ -72,6 +75,7 @@ public class MissionDemolition : MonoBehaviour {
 		castle = Instantiate<GameObject>(castlePrefab);
 		castle.transform.position = castlePos;
 		shotsTaken = 0;
+        currentScore = totalScore;
 
 		//Reset the camera
 		SwitchView("Show Both");

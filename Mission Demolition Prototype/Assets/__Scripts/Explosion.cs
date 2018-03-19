@@ -29,11 +29,15 @@ public class Explosion : MonoBehaviour
             Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
             foreach (Collider hit in colliders)
             {
-				if (hit.tag == "Brick")
-				{
-					DestroyObject(hit.gameObject);
-				}
-				else
+                if (hit.tag == "Brick")
+                {
+                    DestroyObject(hit.gameObject);
+                }
+                else if (hit.tag == "Finish")
+                {
+                    hit.GetComponent<BowserGoal>().bowserDeath();
+                }
+                else
 				{
 	                Rigidbody rb = hit.GetComponent<Rigidbody>();
 	                if (rb != null)

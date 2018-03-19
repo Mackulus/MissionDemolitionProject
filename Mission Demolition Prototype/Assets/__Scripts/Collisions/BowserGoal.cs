@@ -36,7 +36,7 @@ public class BowserGoal : MonoBehaviour {
         }
     }
 
-    private void bowserDeath()
+    public void bowserDeath()
     {
         GameObject.Find("Icons").GetComponent<UI_IconDisplay>().UpdateIconDisplay();
         MissionDemolition.PointsGained(10);

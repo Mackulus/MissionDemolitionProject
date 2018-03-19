@@ -14,7 +14,7 @@ public class Slingshot : MonoBehaviour {
 	[Header("Set Dynamically")]
 	private bool aimingMode;
 	private bool shotFiredRecently = false;
-	private GameObject jumping;
+    private GameObject jumping;
 	private GameObject launchPoint;
 	private GameObject projectile;
 	private GameObject standing;
@@ -33,7 +33,7 @@ public class Slingshot : MonoBehaviour {
 
 	void Awake()
 	{
-		S = this;
+        S = this;
 		standing = GameObject.Find("MarioStanding");
 		throwing = GameObject.Find("MarioThrowing");
 		jumping = GameObject.Find("MarioJumping");
@@ -47,10 +47,15 @@ public class Slingshot : MonoBehaviour {
 
 	void Update()
 	{
-        GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
-        if (prefabToUse == null)
+        if (FollowCam.POI == null && !shotFiredRecently)
         {
-			Invoke("showLoseScreen", 8f);
+            GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
+            if (prefabToUse == null && !IsInvoking("showLoseScreen"))
+            {
+                print("started invoking");
+                
+                Invoke("showLoseScreen", 8f);
+            }
         }
 		// If Slinghsot is not in aimingMode, don't run this code
 		if (!aimingMode) return;
@@ -113,13 +118,11 @@ public class Slingshot : MonoBehaviour {
 	}
 	void OnMouseEnter()
 	{
-		//print("Slingshot:OnMouseEnter()");
 		launchPoint.SetActive(true);
 	}
 
 	void OnMouseExit()
 	{
-		//print("Slingshot:OnMouseExit()");
 		launchPoint.SetActive(false);
 	}
 
