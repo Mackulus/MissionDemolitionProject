@@ -16,7 +16,7 @@ public class spawnAnotherWallDestroyer : MonoBehaviour {
         Collider[] colliders = Physics.OverlapSphere(startPos, .1f);
 
         if (collision.collider.tag == "Projectile" && (colliders.Length == 0 || 
-            (colliders.Length == 1 && colliders[0].name == "WallDestroyer")))
+            (colliders.Length == 1 && colliders[0].tag == "CanHurtEnemy")))
         {
             Invoke("createNewDestroyer", 1f);
         }
@@ -27,6 +27,10 @@ public class spawnAnotherWallDestroyer : MonoBehaviour {
             {
                 print(c);
             }
+        }
+        else
+        {
+            print(colliders);
         }
     }
 

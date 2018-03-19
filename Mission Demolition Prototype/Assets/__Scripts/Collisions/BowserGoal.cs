@@ -25,7 +25,7 @@ public class BowserGoal : MonoBehaviour {
         //Check to see if it's a projectile
         if (!IsInvoking("RemoveBowser"))
         {
-            if (other.gameObject.tag == "Projectile" || other.gameObject.name == "WallDestroyer")
+            if (other.gameObject.tag == "Projectile" || other.gameObject.tag == "CanHurtEnemy")
             {
                 bowserDeath();
             }

@@ -137,7 +137,7 @@ public class Slingshot : MonoBehaviour {
 		GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
 		if (prefabToUse == null)
 		{
-			// Do something to trigger end game
+            showLoseScreen();
 		}
 		else {
 			projectile = Instantiate(prefabToUse) as GameObject;
