@@ -8,7 +8,7 @@ public class ProjectileController : MonoBehaviour {
 
 	private void OnCollisionEnter (Collision collision)
 	{
-		if (collision.collider.name != "Ground" && collision.collider.name != "CastleGround"
+		if (collision.collider.name != "CastleGround"
 			&& collision.collider.name != "Mario" && collision.collider.tag != "Dummy Projectile" 
 			&& collision.collider.tag != "Projectile")
 		{

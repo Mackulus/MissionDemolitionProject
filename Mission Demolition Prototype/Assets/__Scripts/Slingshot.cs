@@ -37,6 +37,7 @@ public class Slingshot : MonoBehaviour {
 		standing = GameObject.Find("MarioStanding");
 		throwing = GameObject.Find("MarioThrowing");
 		jumping = GameObject.Find("MarioJumping");
+		loseScreen = GameObject.Find("Canvas").transform.Find("LoseScreen").gameObject;
 		throwing.SetActive(false);
 		jumping.SetActive(false);
 		Transform launchPointTrans = transform.Find("LaunchPoint");
@@ -103,12 +104,14 @@ public class Slingshot : MonoBehaviour {
 
 	public static void CallLoseScreen()
 	{
+		print("here");
 		GameObject prefabToUse = ShowProjectilesLeft.GetClosestPrefab();
-		if (prefabToUse == null && !IsInvoking("S.showLoseScreen"))
+		print(prefabToUse);
+		if (prefabToUse == null)
 		{
 			print("started invoking");
 
-			Invoke("S.showLoseScreen", 8f);
+			S.Invoke("showLoseScreen", 1.5f);
 		}
 	}
 
